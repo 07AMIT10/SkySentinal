@@ -43,64 +43,7 @@ These files are set during the **foundation commit** and must not be edited by e
 
 ---
 
-## 3. Project Structure (Foundation Commit)
 
-```
-SkySentinal/
-├── .env.example                    # Shared (Backend adds keys)
-├── .gitignore                      # Existing
-├── PRD.md                          # Existing — read-only
-├── plan.md                         # Existing — this plan supersedes
-├── tasks.md                        # Coordination index → links to workflow docs
-├── next.config.ts                  # Shared — set once
-├── package.json                    # Shared — coordinated edits only
-├── tsconfig.json                   # Shared — set once
-│
-├── docs/
-│   └── workflows/
-│       ├── ui.md                   # UI Owner's task tracker
-│       └── backend.md              # Backend Owner's task tracker
-│
-├── public/
-│   └── favicon.ico                 # UI Owner
-│
-├── app/
-│   ├── layout.tsx                  # Shared — set once (fonts, metadata, body wrapper)
-│   ├── page.tsx                    # UI Owner — main dashboard page
-│   ├── globals.css                 # UI Owner — full design system
-│   └── api/
-│       ├── simulate-disruption/
-│       │   └── route.ts            # Backend Owner
-│       └── approve/
-│           └── route.ts            # Backend Owner
-│
-├── components/
-│   └── demo/
-│       ├── TriggerPanel.tsx        # UI Owner
-│       ├── AgentTrace.tsx          # UI Owner
-│       ├── HitlGate.tsx            # UI Owner
-│       ├── MetricsPanel.tsx        # UI Owner
-│       └── ChannelDispatch.tsx     # UI Owner
-│
-├── lib/
-│   ├── types.ts                    # Shared — contract boundary
-│   ├── demo-data.ts                # Backend Owner — mock data
-│   ├── providers/
-│   │   ├── manifest.ts             # Backend Owner — Appwrite-shaped
-│   │   ├── flight-offers.ts        # Backend Owner — Amadeus-shaped
-│   │   ├── content-template.ts     # Backend Owner — Contentstack-shaped
-│   │   ├── reasoning-draft.ts      # Backend Owner — Groq/OpenRouter-shaped
-│   │   └── detokenize-dispatch.ts  # Backend Owner — Appwrite-shaped
-│   └── orchestration/
-│       ├── simulate-disruption.ts  # Backend Owner
-│       └── approve-recovery.ts     # Backend Owner
-│
-└── tests/
-    ├── providers.test.ts           # Backend Owner
-    └── orchestration.test.ts       # Backend Owner
-```
-
----
 
 ## 4. Shared Type Contracts (`lib/types.ts`)
 
